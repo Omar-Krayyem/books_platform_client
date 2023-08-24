@@ -12,7 +12,7 @@ const Home = () => {
     const getRecipes = async () => {
         const token = localStorage.getItem("token");
     
-        await axios.get(`http://127.0.0.1:5000/books/GetAll`, {
+        await axios.get(`http://127.0.0.1:5000/books/getAll`, {
             "headers": {
                 'Authorization': `Bearer ${token}`
             }
@@ -37,7 +37,19 @@ const Home = () => {
                 <div className='Home_Body'>
                     <div className="cards_container">
                     {books.map((book) => (
-                        <Card id={book.user.id} name={book.name} author={book.author} genre={book.genre} review={book.review} new_image_url={book.new_image_url}/>
+                        <Card 
+                        key = {book._id}
+                        id={book._id} 
+                        title={book.title} 
+                        author={book.author} 
+                        genre={book.genre} 
+                        review={book.review} 
+                        likeCount={book.likeCount}
+                        username={book.user.username}
+                        new_image_url={book.new_image_url}
+                        isLiked={book.isLikedByUser}
+                        isFollowing = {book.isFollowingAuthor}
+                        />
                     ))}
                     </div>
                 </div>

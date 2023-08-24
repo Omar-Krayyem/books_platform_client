@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const AddBook = ({ onClose }) =>{
 
-    let [name, setName] = useState("");
+    let [title, setTitle] = useState("");
     let [author, setAuthor] = useState("");
     let [genre, setGenre] = useState("");
     let [review, setReview] = useState("");
@@ -14,17 +14,18 @@ const AddBook = ({ onClose }) =>{
         e.preventDefault()
 
         const token = localStorage.getItem("token");
-        const postData = {name, author, image, review, genre};
+        const postData = {title, author, image, review, genre};
         console.log(postData)
 
-        axios.post('http://127.0.0.1:5000/books/CreateBook', postData, {
+        axios.post('http://127.0.0.1:5000/books/createBook', postData, {
             headers: {
                 Authorization: `Bearer ${token}`,
                 'Content-Type': 'multipart/form-data'
             }
         })
         .then(response => {
-            console.log(response.data);
+            console.log(response);
+            window.location.href = '/home';
             // let $token = response.data.token 
             // localStorage.setItem("token", $token);
             // console.log($token)
@@ -36,21 +37,21 @@ const AddBook = ({ onClose }) =>{
     }
 
     return (
-        <div class="AddBook">
+        <div className="AddBook">
             <div className="AddBook_container">
-                <h1 class="title" >Add Book</h1>
-                <form enctype = 'multipart/form-data' className="BookForm">
-                    <div class="text_feild">
+                <h1 className="title" >Add Book</h1>
+                <form encType = 'multipart/form-data' className="BookForm">
+                    <div className="text_feild">
                         <label className="BookLabel">Book Name</label><br></br>
                         <input 
                         type="text" 
                         placeholder="Book Name"
                         required
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
                         ></input> 
                     </div>
-                    <div class="text_feild">
+                    <div className="text_feild">
                         <label className="BookLabel">Author</label><br></br>
                         <input 
                         type="text" 
@@ -60,7 +61,7 @@ const AddBook = ({ onClose }) =>{
                         onChange={(e) => setAuthor(e.target.value)}
                         ></input> 
                     </div>
-                    <div class="text_feild">
+                    <div className="text_feild">
                         <label className="BookLabel">Genre</label><br></br>
                         <input 
                         type="text" 
@@ -70,7 +71,7 @@ const AddBook = ({ onClose }) =>{
                         onChange={(e) => setGenre(e.target.value)}
                         ></input> 
                     </div>
-                    <div class="text_feild">
+                    <div className="text_feild">
                         <label className="BookLabel">Review</label><br></br>
                         <textarea 
                         type="text" 
@@ -80,9 +81,9 @@ const AddBook = ({ onClose }) =>{
                         onChange={(e) => setReview(e.target.value)}
                         ></textarea> 
                     </div>
-                    <div class="upload">
+                    <div className="upload">
                         <label className="BookLabel">Image</label>
-                        <label class="file-label">Choose an image<input 
+                        <label className="file-label">Choose an image<input 
                         type="file" 
                         onChange ={(e) => setImage(e.target.files[0])}
                         /></label>

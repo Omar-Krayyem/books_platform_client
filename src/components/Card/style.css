@@ -72,9 +72,27 @@
     padding: 10px 30px;
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
     justify-content: space-between;
 }
 
 .below h3{
     cursor: pointer;
+}
+
+.likes{
+    font-size: 25px;
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.like_icon{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.liked{
+    color: blue;
 }
