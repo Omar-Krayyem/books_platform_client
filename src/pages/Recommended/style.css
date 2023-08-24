@@ -1,0 +1,17 @@
+.Recommended{
+    display: flex;
+    min-height: 100vh;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.Recommended .Recommended_Body{
+    padding: 20px 8%;
+}
+
+.Recommended .Recommended_Body .cards_container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 10px;
+}

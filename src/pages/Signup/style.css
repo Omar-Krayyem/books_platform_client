@@ -1,0 +1,105 @@
+.SignupPage{
+    background: linear-gradient(140deg, #FFEED2, white);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    top: 50%;
+}
+
+.signup_form{
+    align-items: center;
+    top: 50%;
+    background-color: white;
+    padding: 15px 0px;
+    border-radius: 25px;
+    width: 500px;
+}
+
+.signup_form > .form_header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #FFEED2;
+}
+
+.signup_form .form_header h1{
+    text-align: center;
+    color: #382110;
+}
+
+.signup_form .form_body{
+    
+    padding: 10px 30px; 
+}
+
+.signup_form .form_body form{
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    width: 100%;
+    
+}
+
+.form_body .text_feild{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+.form_body .text_feild > label{
+    font-size: 18px;
+    font-weight: 700;
+    color: #382110;
+    margin-bottom: -20px;
+}
+
+.form_body .text_feild  input{
+    width: 100%;
+    margin-top: 7px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 2px solid #FFEED2 ;
+    color: black;
+    outline: none;
+    background: none;
+    
+}
+
+.form_body .btn{
+    margin-top: 10px;
+    height: 35px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    border-radius: 25px;
+    color: white;
+    background-color: #382110;
+}
+
+.form_body .btn:hover{
+    color: #382110;
+    border: 2px solid #382110;
+    background-color: white ;
+    transition: .5s;
+}
+
+.signup_form .form_bottom{
+    padding: 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup_form .form_bottom > a{
+    text-decoration: none;
+    margin-left: 5px;
+    font-weight: bold;
+    color: #382110;
+}

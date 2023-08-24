@@ -1,0 +1,124 @@
+.AddBook{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    background-color: #00000079;
+    z-index: 1;
+  }
+
+.AddBook_container{
+    width: 550px;
+    height: 650px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFEED2;
+    border-radius: 25px;
+    justify-items: center;
+    justify-content: center;
+
+}
+
+.AddBook_container .title{
+    color: #382110;
+    display: flex;
+    justify-content: center;
+}
+  
+.BookForm{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    padding: 0px 50px 0px 50px;
+}
+
+.BookForm .text_feild{
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.BookForm .text_feild .BookLabel{
+    font-size: 20px;
+    font-weight: 700;
+    color: #382110;
+    margin-bottom: -20px;
+}
+
+.BookForm .text_feild > input,.BookForm .text_feild > textarea{
+    width: 100%;
+    margin-top: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #382110;
+    color: black;
+    outline: none;
+    background: none;
+    padding-bottom: 7px;
+    resize: none;
+    max-height: 150px;
+}
+
+.BookForm .BookAddbtn, .BookForm .BookCloebtn{
+    margin-top: 10px;
+    color: #382110;
+    background-color: #FFEED2;
+    border: 1px solid #382110;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.BookForm .BookAddbtn:hover, .BookForm .BookCloebtn:hover{
+    color: #FFEED2;
+    background-color: #382110;
+    border: 1px solid #382110;
+    transition: 0.5s;
+}
+
+.BookForm .upload {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.BookForm .upload label {
+    font-size: 20px;
+    font-weight: 700;
+    color: #382110;
+    margin-bottom: -20px;
+}
+
+.BookForm .upload input[type="file"] {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 16px;
+    color: black;
+    outline: none;
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.BookForm .upload .file-label {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #382110;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.BookForm .upload .file-label:hover {
+    background-color: #382110;
+}

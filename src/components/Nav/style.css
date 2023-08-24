@@ -1,0 +1,79 @@
+.nav{
+    margin: 0;
+    top: 0;
+    left: 0;
+    background-color: #382110;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    color: #FFEED2;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.nav .leftSide{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    padding: 10px 50px;
+}
+
+.nav .leftSide .logo{
+    margin-right: 20px;
+}
+
+.text_decoration{
+    text-decoration: none;
+    color: #FFEED2;
+}
+
+.nav .leftSide .logo:hover{
+    color: white ;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.nav .leftSide .btn{
+    margin-left: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav .leftSide .btn:hover{
+    border-bottom: 2px solid #FFEED2;
+    transition: 0.5s;
+}
+
+.nav .rightSide{
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 50px;
+
+}
+
+.nav .rightSide .searchbar{
+    border: none;
+    outline: none;
+    background-color: #FFEED2;
+    border-radius: 15px;
+    font-size: 19px;
+    padding: 10px;
+}
+
+.nav .rightSide .btn{
+    background-color: #FFEED2;
+    color: #382110;
+    padding: 7px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav .rightSide .btn:hover{
+    background-color: #382110;
+    color: white;
+    transition: 0.5s;
+}
