@@ -12,9 +12,11 @@ const Login = () => {
 
         const postData = {email, password};
 
-        axios.post("http://127.0.0.1:5000/auth/login", postData)
+        console.log(postData)
+
+        await axios.post("http://127.0.0.1:5000/auth/login", postData)
         .then(response => {
-            console.log(response.data);
+            console.log(response);
             let $token = response.data.token 
             localStorage.setItem("token", $token);
             console.log($token)

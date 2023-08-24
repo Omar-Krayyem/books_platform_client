@@ -14,13 +14,15 @@ const Signup = () => {
 
         const postData = {username, email, password};
 
-        axios.post("http://127.0.0.1:5000/auth/register", postData)
+        console.log(postData)
+
+        await axios.post("http://127.0.0.1:5000/auth/register", postData)
         .then(response => {
             console.log(response.data);
             let $token = response.data.token 
             localStorage.setItem("token", $token);
             console.log($token)
-            window.location.href = '/home';
+            window.location.href = '/Home';
         })
         .catch(error => {
             console.log(error);
@@ -39,7 +41,7 @@ const Signup = () => {
                             <input 
                             type="text" 
                             placeholder="Username" 
-                            required=""
+                            required
                             onChange={(e) => setUSername(e.target.value)}
                             value={username}
                             ></input>
@@ -49,7 +51,7 @@ const Signup = () => {
                             <input 
                             type="email"
                             placeholder="example@gmail.com" 
-                            required=""
+                            required
                             onChange={(e) => setEmail(e.target.value)}
                             value={email}
                             ></input> 
@@ -59,7 +61,7 @@ const Signup = () => {
                             <input 
                             type="password"
                             placeholder="Password" 
-                            required=""
+                            required
                             onChange={(e) => setPassword(e.target.value)}
                             value={password}
                             ></input>
