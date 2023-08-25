@@ -9,7 +9,7 @@ const Home = () => {
 
     const [books, setBooks] = useState([]);
 
-    const getRecipes = async () => {
+    const getBooks = async () => {
         const token = localStorage.getItem("token");
     
         await axios.get(`http://127.0.0.1:5000/books/getAll`, {
@@ -27,7 +27,7 @@ const Home = () => {
       };
     
       useEffect(() => {
-        getRecipes();
+        getBooks();
       }, []);
 
     return (
