@@ -14,22 +14,19 @@ const AddBook = ({ onClose }) =>{
         e.preventDefault()
 
         const token = localStorage.getItem("token");
-        const postData = {title, author, image, review, genre};
+        const postData = {title, author, genre, review};
         console.log(postData)
 
         axios.post('http://127.0.0.1:5000/books/createBook', postData, {
             headers: {
                 Authorization: `Bearer ${token}`,
-                'Content-Type': 'multipart/form-data'
+                // 'Content-Type': 'multipart/form-data'
             }
         })
         .then(response => {
             console.log(response);
-            window.location.href = '/home';
-            // let $token = response.data.token 
-            // localStorage.setItem("token", $token);
-            // console.log($token)
-            // window.location.href = '/home';
+            window.location.href = '/Home';
+            
         })
         .catch(error => {
             console.log(error);

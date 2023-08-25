@@ -82,7 +82,7 @@ const Nav = () => {
                                 user_id={book.user._id}
                                 new_image_url={book.new_image_url}
                                 isLiked={book.isLikedByUser}
-                                isFollowing={'flase'}
+                                isFollowing={'false'}
                             />
                         ))}
                     </div>
