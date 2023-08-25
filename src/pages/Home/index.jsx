@@ -46,6 +46,7 @@ const Home = () => {
                         review={book.review} 
                         likeCount={book.likeCount}
                         username={book.user.username}
+                        user_id={book.user._id}
                         new_image_url={book.new_image_url}
                         isLiked={book.isLikedByUser}
                         isFollowing = {book.isFollowingAuthor}

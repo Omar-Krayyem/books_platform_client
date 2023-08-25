@@ -9,12 +9,43 @@ const Card = (props) => {
 
     const post_id = props.id;
     const token = localStorage.getItem("token");
+    const user_id = props.user_id
 
     /////////////////////////////////////////////////////////////////////////////FOLLOW
 
-    let [isFollowed, setIsFollowed] = useState();
+    let [isFollowed, setIsFollowed] = useState(props.isFollowing);
 
-    setIsFollowed = props.isFollowing;
+    const handleFollowBtn = () => {
+        if (isFollowed) {
+            axios.put(`http://127.0.0.1:5000/users/${user_id}/unfollow`, null, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            .then(response => {
+                setIsFollowed(false);
+                console.log(response.data)
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        } else {
+            // const postData = { post_id};
+            axios.put(`http://127.0.0.1:5000/users/${user_id}/follow`, null, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+            .then(response => {
+                console.log(response.data)
+                setIsFollowed(true);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        }
+    }
+
 
 
     /////////////////////////////////////////////////////////////////////////////LIKE
@@ -76,7 +107,7 @@ const Card = (props) => {
                     </div>
                 </div>
                 <div className="below">
-                    <h3 >{isFollowed ? 'unfollow' : 'follow'}</h3>
+                    <h3 onClick={handleFollowBtn} >{isFollowed ? 'unfollow' : 'follow'}</h3>
                     <div className='likes'> {like} <AiFillLike className={`like_icon ${isLiked ? 'liked' : ''}`} onClick={handleLikeBtn}/></div>
                 </div>
             </div>  
